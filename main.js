@@ -75,11 +75,11 @@ console.log(weekFn(11));
 
 function ageClassification(num) {
   var message = null;
-  message = num < 24 ? 'детский возраст' : null;
-  message = num < 44 && message === null ? 'молодой возраст' : message;
-  message = num < 65 && message === null ? 'средний возраст' : message;
-  message = num < 75 && message === null ? 'пожилой возраст' : message;
-  message = num < 90 && message === null ? 'старческий возраст' : message;
+  message = num <= 24 ? 'детский возраст' : null;
+  message = num <= 44 && message === null ? 'молодой возраст' : message;
+  message = num <= 65 && message === null ? 'средний возраст' : message;
+  message = num <= 75 && message === null ? 'пожилой возраст' : message;
+  message = num <= 90 && message === null ? 'старческий возраст' : message;
   message = num <= 122 && message === null ? 'долгожители' : message;
   return num < 0 || num > 122 ? null : message;
 }
@@ -130,7 +130,7 @@ function cbAdd(a, b) {
 console.log(mainFunc(2, 5, cbAdd));
 
 function cbPow(num, pow) {
-  return Math.pow(2, 5);
+  return Math.pow(num, pow);
 }
 console.log(mainFunc(2, 5, cbPow));
 console.log(mainFunc(2, 5, 'not a func'));
